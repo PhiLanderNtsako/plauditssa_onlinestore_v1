@@ -1,0 +1,64 @@
+RewriteEngine On
+
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^home/ index.php [NC,L]
+
+RewriteRule ^t-shirts/ t_shirts.php [NC,L]
+
+RewriteRule ^hoodies/ hoodies.php [NC,L]
+
+RewriteRule ^headwear/ headwear.php [NC,L]
+
+RewriteRule ^long-sleeves/ long_sleeves.php [NC,L]
+
+RewriteRule ^apparel/ apparel.php [NC,L]
+
+RewriteRule ^kids-collection/ kids_collection.php [NC,L]
+
+RewriteRule ^winter-collection/ winter_collection.php [NC,L]
+
+RewriteRule ^pride-merch/ pride_merch.php [NC,L]
+
+RewriteRule ^login/ user_login.php [NC,L]
+
+RewriteRule ^register/ user_register.php [NC,L]
+
+RewriteRule ^user-account/ user_account.php [NC,L]
+
+RewriteRule ^contact/ contact.php [NC,L]
+
+RewriteRule ^return-exchange-policy/ return_exchange_policy.php [NC,L]
+
+RewriteRule ^delivery-info/ delivery_info.php [NC,L]
+
+RewriteRule ^size-guide/ size_guide.php [NC,L]
+
+RewriteRule ^payment-success/ payment_success.php [NC,L]
+
+RewriteRule ^payment-cancel/ payment_cancel.php [NC,L]
+
+RewriteRule ^forget-pass/ forget_pass.php [NC,L]
+
+RewriteRule ^cart/ cart.php [NC,L]
+
+RewriteRule ^search/ search.php [NC,L]
+
+Options -Indexes
+
+RewriteRule ^product/([a-z-]+)/([0-9]+)/([a-z-]+)$ single_product.php?type=$1&id=$2&slug=$3 [NC,L]
+
+RewriteRule ^checkout/product/ checkout.php [NC,L]
+
+RewriteRule ^confirm-order/([0-9]+)$ checkout_confirmation.php?id=$1 [NC,L]
+
+RewriteRule ^pass-change/ password_change.php [NC,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
